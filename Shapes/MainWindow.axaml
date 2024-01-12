@@ -1,0 +1,36 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:shapes="clr-namespace:Shapes"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Shapes.MainWindow"
+        Title="Shapes"
+        PointerPressed="Win_PointerPressed"
+        PointerMoved="Win_PointerMoved"
+        PointerReleased="Win_PointerReleased">
+    <shapes:CustomControl Name="myCC">
+        <StackPanel Orientation="Horizontal" Margin="10" Height="200" VerticalAlignment="Top">
+            <Button Click="Button_OnClick" Content="Сравнить скорость алгоритмов"/>
+            <TreeView Height="200">
+                <TreeViewItem Header="Форма" Width="150" Background="White" Foreground="Gray">
+                    <TreeViewItem PointerPressed="WinCircle" Header="Круг" Background="CadetBlue" Foreground="Black"
+                                  IsSelected="True" />
+                    <TreeViewItem PointerPressed="WinTriangle" Header="Треугольник" Background="CadetBlue"
+                                  Foreground="Black" />
+                    <TreeViewItem PointerPressed="WinSquare" Header="Квадрат" Background="CadetBlue" Foreground="Black" />
+                </TreeViewItem>
+            </TreeView>
+            <TreeView Height="200">
+                <TreeViewItem Header="Форма" Width="150" Background="White" Foreground="Gray">
+                    <TreeViewItem PointerPressed="WinCircle" Header="Круг" Background="CadetBlue" Foreground="Black"
+                                  IsSelected="True" />
+                    <TreeViewItem PointerPressed="WinTriangle" Header="Треугольник" Background="CadetBlue"
+                                  Foreground="Black" />
+                    <TreeViewItem PointerPressed="WinSquare" Header="Квадрат" Background="CadetBlue" Foreground="Black" />
+                </TreeViewItem>
+            </TreeView>
+        </StackPanel>
+    </shapes:CustomControl>
+
+</Window>

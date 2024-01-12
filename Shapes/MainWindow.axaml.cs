@@ -57,8 +57,8 @@ public partial class MainWindow : Window
 
     private void Button_OnClick(object? sender, RoutedEventArgs e)
     {
-        var Window = this.Find<Comparer>("Comparer_Name");
-        Console.WriteLine(Window);
-        Window.InitializeComponent();
+        //var Window = this.Find<Comparer>("Comparer_Name");
+        
+        
     }
 }

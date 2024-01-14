@@ -13,6 +13,7 @@ namespace Shapes
     {
         private readonly List<Shape> Shapes = new();
         private stype Stype = stype.Circle;
+        private method Method = method.ByDefenition;
 
         public void ChangeToCircle()
         {
@@ -27,6 +28,21 @@ namespace Shapes
         public void ChangeToSquare()
         {
             Stype = stype.Square;
+        }
+        
+        public void ChangeToByDefenition()
+        {
+            Method = method.ByDefenition;
+        }
+
+        public void ChangeToByGraham()
+        {
+            Method = method.ByGraham;
+        }
+
+        public void ChangeToByAndrew()
+        {
+            Method = method.ByAndrew;
         }
 
         public void LPointerPressed(double x, double y)
@@ -270,7 +286,18 @@ namespace Shapes
 
             if (Shapes.Count > 2)
             {
-                DrawAndrew(drawingContext, pen_for_shell, true);
+                switch (Method)
+                {
+                    case method.ByDefenition:
+                        DrawShell(drawingContext, pen_for_shell, true);
+                        break;
+                    case method.ByGraham:
+                        DrawGraham(drawingContext, pen_for_shell, true);
+                        break;
+                    case method.ByAndrew:
+                        DrawAndrew(drawingContext, pen_for_shell, true);
+                        break;
+                }
             }
 
             foreach (var c in Shapes)

@@ -22,12 +22,12 @@
                 </TreeViewItem>
             </TreeView>
             <TreeView Height="200">
-                <TreeViewItem Header="Форма" Width="150" Background="White" Foreground="Gray">
-                    <TreeViewItem PointerPressed="WinCircle" Header="Круг" Background="CadetBlue" Foreground="Black"
+                <TreeViewItem Header="Алгоритм" Width="150" Background="White" Foreground="Gray">
+                    <TreeViewItem PointerPressed="WinDef" Header="По определению" Background="CadetBlue" Foreground="Black"
                                   IsSelected="True" />
-                    <TreeViewItem PointerPressed="WinTriangle" Header="Треугольник" Background="CadetBlue"
+                    <TreeViewItem PointerPressed="WinGra" Header="По Грехэму" Background="CadetBlue"
                                   Foreground="Black" />
-                    <TreeViewItem PointerPressed="WinSquare" Header="Квадрат" Background="CadetBlue" Foreground="Black" />
+                    <TreeViewItem PointerPressed="WinAnd" Header="По Эндрю" Background="CadetBlue" Foreground="Black" />
                 </TreeViewItem>
             </TreeView>
         </StackPanel>

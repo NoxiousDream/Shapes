@@ -55,10 +55,26 @@ public partial class MainWindow : Window
         CC?.ChangeToSquare();
     }
 
+    private void WinDef(object? sender, PointerPressedEventArgs e)
+    {
+        CustomControl? CC = this.Find<CustomControl>("myCC");
+        CC?.ChangeToByDefenition();
+    }
+
     private void Button_OnClick(object? sender, RoutedEventArgs e)
     {
         //var Window = this.Find<Comparer>("Comparer_Name");
-        
-        
+    }
+
+    private void WinGra(object? sender, PointerPressedEventArgs e)
+    {
+        CustomControl? CC = this.Find<CustomControl>("myCC");
+        CC?.ChangeToByGraham();
+    }
+
+    private void WinAnd(object? sender, PointerPressedEventArgs e)
+    {
+        CustomControl? CC = this.Find<CustomControl>("myCC");
+        CC?.ChangeToByAndrew();
     }
 }

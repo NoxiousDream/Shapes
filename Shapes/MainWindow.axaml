@@ -11,23 +11,28 @@
         PointerReleased="Win_PointerReleased">
     <shapes:CustomControl Name="myCC">
         <StackPanel Orientation="Horizontal" Margin="10" Height="200" VerticalAlignment="Top">
-            <Button Click="Button_OnClick" Content="Сравнить скорость алгоритмов"/>
-            <TreeView Height="200">
-                <TreeViewItem Header="Форма" Width="150" Background="White" Foreground="Gray">
+            
+            <Button Width="150" Height="32" Click="Button_OnClick" Content="Сравнить скорость алгоритмов"
+                    VerticalAlignment="Top" CornerRadius="5" />
+            
+            <TreeView>
+                <TreeViewItem PointerPressed="WinForma" Header="Форма" Width="150" Background="White" Foreground="Gray" CornerRadius="5" >
                     <TreeViewItem PointerPressed="WinCircle" Header="Круг" Background="CadetBlue" Foreground="Black"
-                                  IsSelected="True" />
+                                  IsSelected="True" CornerRadius="5" />
                     <TreeViewItem PointerPressed="WinTriangle" Header="Треугольник" Background="CadetBlue"
-                                  Foreground="Black" />
-                    <TreeViewItem PointerPressed="WinSquare" Header="Квадрат" Background="CadetBlue" Foreground="Black" />
+                                  Foreground="Black" CornerRadius="5" />
+                    <TreeViewItem PointerPressed="WinSquare" Header="Квадрат" Background="CadetBlue" Foreground="Black" CornerRadius="5" />
                 </TreeViewItem>
             </TreeView>
-            <TreeView Height="200">
-                <TreeViewItem Header="Алгоритм" Width="150" Background="White" Foreground="Gray">
-                    <TreeViewItem PointerPressed="WinDef" Header="По определению" Background="CadetBlue" Foreground="Black"
-                                  IsSelected="True" />
+            
+            <TreeView>
+                <TreeViewItem Header="Алгоритм" Width="200" Background="White" Foreground="Gray" CornerRadius="5">
+                    <TreeViewItem PointerPressed="WinDef" Header="По определению" Background="CadetBlue"
+                                  Foreground="Black"
+                                  IsSelected="True" CornerRadius="5" />
                     <TreeViewItem PointerPressed="WinGra" Header="По Грехэму" Background="CadetBlue"
-                                  Foreground="Black" />
-                    <TreeViewItem PointerPressed="WinAnd" Header="По Эндрю" Background="CadetBlue" Foreground="Black" />
+                                  Foreground="Black" CornerRadius="5" />
+                    <TreeViewItem PointerPressed="WinAnd" Header="По Эндрю" Background="CadetBlue" Foreground="Black" CornerRadius="5" />
                 </TreeViewItem>
             </TreeView>
         </StackPanel>

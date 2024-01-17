@@ -102,10 +102,8 @@ namespace Shapes
         private void DrawShell(DrawingContext drawingContext, IPen pen, bool Draw)
         {
             foreach (var s in Shapes)
-            {
                 s.IsShell = false;
-            }
-
+            
             for (var i = 0; i < Shapes.Count - 1; i++)
             {
                 var a = Shapes[i];
@@ -304,11 +302,6 @@ namespace Shapes
             {
                 c.Draw(drawingContext, brush, pen_for_outline);
             }
-        }
-
-        public void Compare()
-        {
-            
         }
     }
 }

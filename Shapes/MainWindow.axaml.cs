@@ -63,7 +63,8 @@ public partial class MainWindow : Window
 
     private void Button_OnClick(object? sender, RoutedEventArgs e)
     {
-        //var Window = this.Find<Comparer>("Comparer_Name");
+        var Graph = new Comparer();
+        Graph.ShowDialog(this);
     }
 
     private void WinGra(object? sender, PointerPressedEventArgs e)

@@ -277,7 +277,6 @@ namespace Shapes
 
         public override void Render(DrawingContext drawingContext)
         {
-            var pen_for_shell = new Pen(Brushes.Purple, 1.7, lineCap: PenLineCap.Round);
             var pen_for_outline = new Pen(Brushes.Black, 1.7, lineCap: PenLineCap.Round);
 
             var brush = new SolidColorBrush(Colors.GreenYellow);
@@ -287,13 +286,13 @@ namespace Shapes
                 switch (Method)
                 {
                     case method.ByDefenition:
-                        DrawShell(drawingContext, pen_for_shell, true);
+                        DrawShell(drawingContext, new Pen(Brushes.Cyan, 1.7, lineCap: PenLineCap.Round), true);
                         break;
                     case method.ByGraham:
-                        DrawGraham(drawingContext, pen_for_shell, true);
+                        DrawGraham(drawingContext, new Pen(Brushes.Magenta, 1.7, lineCap: PenLineCap.Round), true);
                         break;
                     case method.ByAndrew:
-                        DrawAndrew(drawingContext, pen_for_shell, true);
+                        DrawAndrew(drawingContext, new Pen(Brushes.Yellow, 1.7, lineCap: PenLineCap.Round), true);
                         break;
                 }
             }

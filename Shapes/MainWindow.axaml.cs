@@ -83,4 +83,9 @@ public partial class MainWindow : Window
     {
         
     }
+
+    private void Color_Pick(object? sender, RoutedEventArgs e)
+    {
+        
+    }
 }

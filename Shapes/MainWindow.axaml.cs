@@ -78,4 +78,9 @@ public partial class MainWindow : Window
         CustomControl? CC = this.Find<CustomControl>("myCC");
         CC?.ChangeToByAndrew();
     }
+
+    private void WinForma(object? sender, PointerPressedEventArgs e)
+    {
+        
+    }
 }

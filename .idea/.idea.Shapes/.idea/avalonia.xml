@@ -4,8 +4,12 @@
     <option name="projectPerEditor">
       <map>
         <entry key="Shapes/App.axaml" value="Shapes/Shapes.csproj" />
+        <entry key="Shapes/ColorPicker.axaml" value="Shapes/Shapes.csproj" />
+        <entry key="Shapes/ColourPicker.axaml" value="Shapes/Shapes.csproj" />
         <entry key="Shapes/Comparer.axaml" value="Shapes/Shapes.csproj" />
+        <entry key="Shapes/Graphs.axaml" value="Shapes/Shapes.csproj" />
         <entry key="Shapes/MainWindow.axaml" value="Shapes/Shapes.csproj" />
+        <entry key="Shapes/Settings.axaml" value="Shapes/Shapes.csproj" />
       </map>
     </option>
   </component>

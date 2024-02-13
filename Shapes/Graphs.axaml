@@ -1,0 +1,19 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:shapes="clr-namespace:Shapes"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Shapes.TimeGraphs"
+        Title="Graphs"
+        Width="600"
+        Height="450"
+        Name="TimeGraphsWindow">
+    <StackPanel>
+        <CheckBox Name="CBDfn" Content="Default" IsChecked="True" IsCheckedChanged="OnIsCheckedChanged" />
+        <CheckBox Name="CBGra" Content="Jarvis" IsChecked="True" IsCheckedChanged="OnIsCheckedChanged" />
+        <CheckBox Name="CBAnd" Content="Jarvis" IsChecked="True" IsCheckedChanged="OnIsCheckedChanged" />
+        <shapes:Graph Name="Graphs" Height="300" Width="600" HorizontalAlignment="Left" />
+        <TextBlock Name="MinTxt" Text="0" />
+    </StackPanel>
+</Window>

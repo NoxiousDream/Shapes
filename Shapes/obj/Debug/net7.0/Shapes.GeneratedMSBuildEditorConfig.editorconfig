@@ -18,8 +18,14 @@ build_property.ProjectDir = C:\Users\Noxio\Documents\Школа\ООП & ТОИ\
 [C:/Users/Noxio/Documents/Школа/ООП & ТОИ/Shapes/Shapes/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Noxio/Documents/Школа/ООП & ТОИ/Shapes/Shapes/Comparer.axaml]
+[C:/Users/Noxio/Documents/Школа/ООП & ТОИ/Shapes/Shapes/ColourPicker.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/Noxio/Documents/Школа/ООП & ТОИ/Shapes/Shapes/Graphs.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [C:/Users/Noxio/Documents/Школа/ООП & ТОИ/Shapes/Shapes/MainWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/Noxio/Documents/Школа/ООП & ТОИ/Shapes/Shapes/Settings.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

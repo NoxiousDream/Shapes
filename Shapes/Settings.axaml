@@ -1,0 +1,43 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="560" d:DesignHeight="250"
+        x:Class="Shapes.Settings"
+        Title="Settings"
+        Width="560"
+        Height="250"
+        CanResize="False">
+    <StackPanel Orientation="Horizontal" Margin="20" Height="200" VerticalAlignment="Top">
+        <StackPanel Margin="10" Height="200" VerticalAlignment="Top">
+            <Button Width="150" Height="32" Click="Button_OnClick" Content="Сравнить скорость алгоритмов"
+                    VerticalAlignment="Top" CornerRadius="5" />
+
+            <Button Width="150" Height="32" Click="Color_Pick" Content="Цвет"
+                    VerticalAlignment="Top" CornerRadius="5" />
+        </StackPanel>
+        <TreeView>
+            <TreeViewItem Header="Форма" Width="150" Background="White" Foreground="Gray"
+                          CornerRadius="5">
+                <TreeViewItem PointerPressed="WinCircle" Header="Круг" Background="CadetBlue" Foreground="Black"
+                              IsSelected="True" CornerRadius="5" />
+                <TreeViewItem PointerPressed="WinTriangle" Header="Треугольник" Background="CadetBlue"
+                              Foreground="Black" CornerRadius="5" />
+                <TreeViewItem PointerPressed="WinSquare" Header="Квадрат" Background="CadetBlue" Foreground="Black"
+                              CornerRadius="5" />
+            </TreeViewItem>
+        </TreeView>
+
+        <TreeView>
+            <TreeViewItem Header="Алгоритм" Width="200" Background="White" Foreground="Gray" CornerRadius="5">
+                <TreeViewItem PointerPressed="WinDef" Header="По определению" Background="CadetBlue"
+                              Foreground="Black"
+                              IsSelected="True" CornerRadius="5" />
+                <TreeViewItem PointerPressed="WinGra" Header="По Грехэму" Background="CadetBlue"
+                              Foreground="Black" CornerRadius="5" />
+                <TreeViewItem PointerPressed="WinAnd" Header="По Эндрю" Background="CadetBlue" Foreground="Black"
+                              CornerRadius="5" />
+            </TreeViewItem>
+        </TreeView>
+    </StackPanel>
+</Window>

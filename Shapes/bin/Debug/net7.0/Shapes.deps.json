@@ -9,6 +9,7 @@
       "Shapes/1.0.0": {
         "dependencies": {
           "Avalonia": "11.0.2",
+          "Avalonia.Controls.ColorPicker": "11.0.2",
           "Avalonia.Desktop": "11.0.2",
           "Avalonia.Diagnostics": "11.0.2",
           "Avalonia.Fonts.Inter": "11.0.2",

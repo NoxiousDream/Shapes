@@ -10,34 +10,39 @@
         CanResize="False">
     <StackPanel Orientation="Horizontal" Margin="20" Height="200" VerticalAlignment="Top">
         <StackPanel Margin="10" Height="200" VerticalAlignment="Top">
-            <Button Width="150" Height="32" Click="Button_OnClick" Content="Сравнить скорость алгоритмов"
-                    VerticalAlignment="Top" CornerRadius="5" />
+            <Button Width="150" Height="40" Margin="1" Click="Button_OnClick" Content="Сравнить скорость алгоритмов"
+                    VerticalAlignment="Top" CornerRadius="5" VerticalContentAlignment="Center" />
 
-            <Button Width="150" Height="32" Click="Color_Pick" Content="Цвет"
-                    VerticalAlignment="Top" CornerRadius="5" />
+            <Button Width="150" Height="40" Margin="1" Click="Color_Pick" Content="Цвет"
+                    VerticalAlignment="Top" CornerRadius="5" VerticalContentAlignment="Center" />
+            
+            <Button Width="150" Height="40" Margin="1" Click="SaveFile" Content="Сохранить как..."
+                    VerticalAlignment="Top" CornerRadius="5" VerticalContentAlignment="Center" />
+            
+            <Slider  Minimum="10" Maximum="50" Ticks="100" Value="10" Name="Radius" ValueChanged="Radius_OnValueChanged"/>
         </StackPanel>
-        <TreeView>
-            <TreeViewItem Header="Форма" Width="150" Background="White" Foreground="Gray"
-                          CornerRadius="5">
-                <TreeViewItem PointerPressed="WinCircle" Header="Круг" Background="CadetBlue" Foreground="Black"
-                              IsSelected="True" CornerRadius="5" />
-                <TreeViewItem PointerPressed="WinTriangle" Header="Треугольник" Background="CadetBlue"
-                              Foreground="Black" CornerRadius="5" />
-                <TreeViewItem PointerPressed="WinSquare" Header="Квадрат" Background="CadetBlue" Foreground="Black"
-                              CornerRadius="5" />
-            </TreeViewItem>
-        </TreeView>
+        <ListBox Width="160" Height="200" Background="White" Foreground="Gray"
+                 CornerRadius="5" Margin="5 10">
+            <ListBoxItem Tapped="WinCircle" Height="40" Margin="1" Content="Круг" VerticalContentAlignment="Center"
+                         Background="CadetBlue" Foreground="Black"
+                         IsSelected="True" CornerRadius="5" />
+            <ListBoxItem Tapped="WinTriangle" Height="40" Margin="1" Content="Треугольник"
+                         VerticalContentAlignment="Center" Background="CadetBlue"
+                         Foreground="Black" CornerRadius="5" />
+            <ListBoxItem Tapped="WinSquare" Height="40" Margin="1" Content="Квадрат" VerticalContentAlignment="Center"
+                         Background="CadetBlue" Foreground="Black"
+                         CornerRadius="5" />
+        </ListBox>
 
-        <TreeView>
-            <TreeViewItem Header="Алгоритм" Width="200" Background="White" Foreground="Gray" CornerRadius="5">
-                <TreeViewItem PointerPressed="WinDef" Header="По определению" Background="CadetBlue"
-                              Foreground="Black"
-                              IsSelected="True" CornerRadius="5" />
-                <TreeViewItem PointerPressed="WinGra" Header="По Грехэму" Background="CadetBlue"
-                              Foreground="Black" CornerRadius="5" />
-                <TreeViewItem PointerPressed="WinAnd" Header="По Эндрю" Background="CadetBlue" Foreground="Black"
-                              CornerRadius="5" />
-            </TreeViewItem>
-        </TreeView>
+        <ListBox Width="160" Height="200" Background="White" Foreground="Gray" CornerRadius="5" Margin="5 10">
+            <ListBoxItem Tapped="WinDef" Height="40" Margin="1" VerticalContentAlignment="Center"
+                         Content="По определению" Background="CadetBlue"
+                         Foreground="Black" IsSelected="True" CornerRadius="5" />
+            <ListBoxItem Tapped="WinGra" Height="40" Margin="1" Content="По Грехэму" Background="CadetBlue"
+                         Foreground="Black" CornerRadius="5" VerticalContentAlignment="Center" />
+            <ListBoxItem Tapped="WinAnd" Height="40" Margin="1" Content="По Эндрю" Background="CadetBlue"
+                         Foreground="Black"
+                         CornerRadius="5" />
+        </ListBox>
     </StackPanel>
 </Window>

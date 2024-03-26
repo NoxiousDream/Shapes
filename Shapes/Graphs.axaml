@@ -11,9 +11,8 @@
         Name="TimeGraphsWindow">
     <StackPanel>
         <CheckBox Name="CBDfn" Content="Default" IsChecked="True" IsCheckedChanged="OnIsCheckedChanged" />
-        <CheckBox Name="CBGra" Content="Jarvis" IsChecked="True" IsCheckedChanged="OnIsCheckedChanged" />
-        <CheckBox Name="CBAnd" Content="Jarvis" IsChecked="True" IsCheckedChanged="OnIsCheckedChanged" />
+        <CheckBox Name="CBGra" Content="Graham" IsChecked="True" IsCheckedChanged="OnIsCheckedChanged" />
+        <CheckBox Name="CBAnd" Content="Andrew" IsChecked="True" IsCheckedChanged="OnIsCheckedChanged" />
         <shapes:Graph Name="Graphs" Height="300" Width="600" HorizontalAlignment="Left" />
-        <TextBlock Name="MinTxt" Text="0" />
     </StackPanel>
 </Window>

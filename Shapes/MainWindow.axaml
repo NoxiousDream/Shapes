@@ -5,12 +5,12 @@
         xmlns:shapes="clr-namespace:Shapes"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="Shapes.MainWindow"
-        Title="_Shapes"
+        Title="Shapes"
         CanResize="False"
         PointerPressed="Win_PointerPressed"
         PointerMoved="Win_PointerMoved"
         PointerReleased="Win_PointerReleased">
-    <Grid>
+    <Grid Name="Grid">
         <Button Width="150" Height="32" Margin="10" Click="Open_Settings" Content="Настройки"
                 CornerRadius="5" VerticalAlignment="Top" />
         <shapes:CustomControl Name="myCC" />

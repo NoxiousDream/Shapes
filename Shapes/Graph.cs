@@ -8,18 +8,18 @@ namespace Shapes;
 public class Graph : UserControl
 {
     private readonly Brush brush = new SolidColorBrush(Colors.Black);
-    private readonly List<double>[] graphs = new List<double>[2];
-    private readonly Pen[] pens = { new(Brushes.Blue), new(Brushes.Green) };
+    private readonly List<double>[] graphs = new List<double>[3];
+    private readonly Pen[] pens = { new(Brushes.Blue), new(Brushes.Yellow), new(Brushes.Crimson)};
 
     public override void Render(DrawingContext drawingContext)
     {
-        double x = 0;
+        double x = 10;
         var i = 0;
-        var maxElement = double.Max(Max(graphs[0]), Max(graphs[1]));
+        var maxElement = double.Max(Max(graphs[0]), double.Max( Max(graphs[1]), Max(graphs[2])));
         foreach (var graph in graphs)
             if (graph != null)
             {
-                var step = graph.Count / (int)Width;
+                var step = graph.Count / ((int)Width - 10);
                 double xstep = 1;
                 if (step == 0)
                 {
@@ -36,7 +36,7 @@ public class Graph : UserControl
 
                 drawingContext.DrawGeometry(brush, pens[i], new PolylineGeometry(graphPoints, false));
                 i++;
-                x = 0;
+                x = 10;
             }
     }
 

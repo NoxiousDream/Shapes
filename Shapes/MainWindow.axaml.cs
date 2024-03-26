@@ -6,6 +6,7 @@ namespace Shapes;
 
 public partial class MainWindow : Window
 {
+    private Settings settings;
     public MainWindow()
     {
         InitializeComponent();
@@ -34,7 +35,15 @@ public partial class MainWindow : Window
 
     private void Open_Settings(object? sender, RoutedEventArgs e)
     {
-        var settings = new Settings();
-        settings.Show(this);
+        if (settings == null || !settings.IsVisible)
+        {
+            settings = new Settings(myCC.ChangeRadius);
+            settings.Show(this);
+            
+        }
+        else
+        {
+            settings.Activate();
+        }
     }
 }

@@ -8,6 +8,8 @@ using Avalonia.Media;
 
 namespace Shapes;
 
+public delegate void Radius_Change(int r);
+
 [SuppressMessage("ReSharper", "InconsistentNaming")]
 public class CustomControl : UserControl
 {
@@ -15,35 +17,48 @@ public class CustomControl : UserControl
     private ShapeType _shapeType = ShapeType.Circle;
     private Color colour = new(255, 140, 255, 0);
     private Methods Method = Methods.ByDefenition;
+    public Radius_Change radius;
 
     public void ChangeToCircle()
     {
         _shapeType = ShapeType.Circle;
+        InvalidateVisual();
     }
 
     public void ChangeToTriangle()
     {
         _shapeType = ShapeType.Triangle;
+        InvalidateVisual();
     }
 
     public void ChangeToSquare()
     {
         _shapeType = ShapeType.Square;
+        InvalidateVisual();
+    }
+
+    public void ChangeRadius(int R)
+    {
+        Shape.R = R;
+        InvalidateVisual();
     }
 
     public void ChangeToByDefenition()
     {
         Method = Methods.ByDefenition;
+        InvalidateVisual();
     }
 
     public void ChangeToByGraham()
     {
         Method = Methods.ByGraham;
+        InvalidateVisual();
     }
 
     public void ChangeToByAndrew()
     {
         Method = Methods.ByAndrew;
+        InvalidateVisual();
     }
 
     public void LPointerPressed(double x, double y)
@@ -57,7 +72,22 @@ public class CustomControl : UserControl
             creating = false;
         }
 
-        if (creating) _Shapes.Add(Shape.newDot(x, y, _shapeType));
+
+        if (creating)
+        {
+            if (_Shapes.Count <= 2 || IsMegaDragNDrop(x, y))
+                _Shapes.Add(Shape.newDot(x, y, _shapeType));
+            else
+            {
+                foreach (var s in _Shapes)
+                {
+                    s.Xd = s.X - x;
+                    s.Yd = s.Y - y;
+                    s.Move = true;
+                }
+            }
+        }
+        
     }
 
     public void RPointerPressed(double x, double y)
@@ -127,7 +157,7 @@ public class CustomControl : UserControl
                     }
                 }
 
-                if (above * below + ontheline == 0)
+                if (above * below + ontheline == 0 && Draw)
                 {
                     drawingContext.DrawLine(pen, new Point(a.X, a.Y), new Point(b.X, b.Y));
                     a.IsShell = true;
@@ -240,6 +270,30 @@ public class CustomControl : UserControl
                     new Point(u[i + 1].X, u[(i + 1) % u.Count].Y));
         }
     }
+    
+    private bool IsMegaDragNDrop(double x, double y)
+    {
+        var s = new Circle(x, y);
+        _Shapes.Add(s);
+        var p0 = _Shapes.OrderBy(p => p.Y).ThenBy(p => p.X).First();
+        var sortedPoints = _Shapes.OrderBy(p => Math.Atan2(p.Y - p0.Y, p.X - p0.X)).ToList();
+        _Shapes.Remove(s);
+        var hull = new List<Shape> { sortedPoints[0], sortedPoints[1] };
+        foreach (var p in sortedPoints)
+        {
+            while (hull.Count >= 2)
+            {
+                var a = hull.Skip(hull.Count - 2).Take(2).ToList();
+                if (Orientation(a[0], a[1], p) < 0)
+                    hull.RemoveAt(hull.Count - 1);
+                else
+                    break;
+            }
+
+            hull.Add(p);
+        }
+        return hull.Contains(s);
+    }
 
     private static double Orientation(Shape a, Shape b, Shape c)
     {
@@ -290,6 +344,8 @@ public class CustomControl : UserControl
             case Methods.ByAndrew:
                 DrawAndrew(null, null, false);
                 break;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(method), method, null);
         }
 
         return (DateTime.UtcNow - start).TotalMilliseconds;
